@@ -219,7 +219,14 @@ class RipWPCControl:
         )
         self.toggle_button.pack(pady=(0, 10))
 
-        self.refresh_status()
+        # Initial status check in a background thread to avoid blocking UI
+        threading.Thread(target=self._initial_status_check, daemon=True).start()
+
+    def _initial_status_check(self) -> None:
+        """Check service/program state on startup and update UI."""
+        self._update_status_labels()
+        # Start regular polling after initial check
+        self.root.after(POLL_INTERVAL_MS, self.refresh_status)
 
     def on_toggle(self) -> None:
         if self.action_lock.locked():
@@ -243,6 +250,7 @@ class RipWPCControl:
         return est_service_en_cours(SERVICE_NAME) or est_programme_en_cours(PROCESS_NAME)
 
     def refresh_status(self) -> None:
+        """Periodic status update (called after initial startup check)."""
         self._update_status_labels()
         self.root.after(POLL_INTERVAL_MS, self.refresh_status)
 

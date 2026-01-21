@@ -1,0 +1,28 @@
+{
+  "en": {
+    "title": "RipWPC Control",
+    "header": "Version: {version} · Author: {author}",
+    "status_initializing": "Initializing...",
+    "status_checking": "Checking...",
+    "status_service_running": "Service: running",
+    "status_service_stopped": "Service: stopped",
+    "status_program_running": "Program: running",
+    "status_program_stopped": "Program: stopped",
+    "button_stop": "Stop service + program",
+    "button_start": "Start service + program",
+    "description_default": "No description provided."
+  },
+  "fr": {
+    "title": "Contrôle RipWPC",
+    "header": "Version : {version} · Auteur : {author}",
+    "status_initializing": "Initialisation...",
+    "status_checking": "Vérification...",
+    "status_service_running": "Service : en cours",
+    "status_service_stopped": "Service : arrêté",
+    "status_program_running": "Programme : en cours",
+    "status_program_stopped": "Programme : arrêté",
+    "button_stop": "Arrêter le service + programme",
+    "button_start": "Démarrer le service + programme",
+    "description_default": "Aucune description renseignée."
+  }
+}

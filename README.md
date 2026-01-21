@@ -18,12 +18,12 @@ From the repository root:
 ```cmd
 python RipWPC.py
 ```
-The UI will appear and the console window is hidden automatically.
+The UI will appear and the console window is hidden automatically. UI defaults to English; if your OS locale is French, labels show in French.
 
 ## Build (PyInstaller)
-To produce an elevated, console-less single executable:
+To produce an elevated, console-less single executable (including manifest and translations):
 ```cmd
-pyinstaller --name RipWPC --uac-admin --onefile --noconsole --add-data "manifest.json;." RipWPC.py
+pyinstaller --name RipWPC --uac-admin --onefile --noconsole --add-data "manifest.json;." --add-data "i18n.json;." RipWPC.py
 ```
 Artifacts will be in the `dist/` directory. If PyInstaller reports an issue with the obsolete `typing` backport, uninstall it first:
 ```cmd

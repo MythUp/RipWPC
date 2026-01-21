@@ -1,0 +1,6 @@
+{
+  "name": "RipWPC",
+  "version": "1.0.0",
+  "author": "MythUp_",
+  "description": "Simple control panel to start/stop the Windows Parental Controls service (WpcMonSvc) and process (WpcMon.exe)."
+}
